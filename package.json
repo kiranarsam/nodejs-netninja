@@ -1,0 +1,25 @@
+{
+  "name": "nodejs-netninja",
+  "version": "1.0.0",
+  "description": "NodeJs Practice Tutorial with express, routing and views",
+  "main": "app.js",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kiranarsam/nodejs-netninja.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kiranarsam/nodejs-netninja/issues"
+  },
+  "homepage": "https://github.com/kiranarsam/nodejs-netninja#readme"
+}

@@ -1,0 +1,220 @@
+Node.js is ...
+... a JavaScript runtime built on chrome's V8 JavaScript engine. Node.js uses an event-driven, non-blocking model 
+that makes it lightweight and efficient. Node.js package ecosystem, npm, is the largest ecosystem of open source 
+libraries in the world ...
+
+Node.js ACTUALLY is ...
+1. A platform which allows us to run JavaScript on a computer / server.
+2. Read, delete and update files
+3. Easily communicate with a database
+
+Why Node.js is more popular ?
+1. it uses JavaScript
+2. Very fast (runs on the V8 engine & uses non-blocking code)
+3. Huge ecosystem of open source packages (npm)
+4. Great for real-time services (like chats)
+
+What we learn is ...
+A. The inner workings of Node.js
+    1. V8 engine
+    2. Modules
+    3. Event emitter
+    4. The file system
+
+B. Creating a Web server
+    1. Routing 
+    2. Express
+    3. Templating
+
+C. Make a Node.js application (todo app)
+
+
+JavaScript Engines:
+1. Computer do not understand JavaScript
+2. A JavaScript engine takes JavaScript, and converts it into something it does understand - machine code
+
+Machine Code:
+JavaScript --> C++ --> Assembly Language --> Machine Code
+
+So we know ...
+1. Node.js is written in C++
+2. At the heart of Node.js is the V8 engine
+3. The V8 engine converts our JS into machine code
+
+What is V8?
+V8 is Google's open source high-performance JavaScript engine, written in C++ and used in Google chrome, the open source browser 
+from Google. It implements ECMAScript as specified in ECMA-262, 3rd edition, and runs on Windows Xp or later, Mac OS X 10.5+, and 
+Linus systems that use IA-32, ARM or MIPS processors. 
+V8 can run standalone or can be embedded into any C++ application.
+
+
+Node.js with V8:
+JavaScript --> [C++ Node.js (V8)] --> Machine Code
+
+Global Objects:
+1. Class: Buffer
+2. __dirname
+3. __filename
+4. clearImmeddiate(immediateObject)
+5. clearInterval(intervalObject)
+6. clearTimeout(timeoutObject)
+7. console
+8. exports
+9. global
+10. module
+11. process
+12. require()
+    a. require.cache
+    b. require.extensions
+    c. require.resolve()
+13. setImmediate(callback[,arg][, ...])
+14. setInterval(callback, delay[,arg][, ...])
+15. setTimeout(callback, delay[,arg][, ...])
+
+
+Clients & Servers:
+==================
+
+//////////////        Request       //////////////
+//          //    --------------->  //          //
+// Client   //                      // Server   //
+//          //    <---------------  //          //
+//////////////        Response      //////////////
+
+Protocols:
+1. A set of communication rules, that two sides agree to use when communicating
+
+So...
+
+//////////////                      //////////////
+//          //        Socket        //          //
+// Client   //----------------------// Server   //
+//          //                      //          //
+//////////////                      //////////////
+
+IP: 76.121.126.74                   IP: 72.28.226.84
+
+TCP:
+===
+
+        Socket
+    <----------------0--0--0--0--0--0--
+                        Packets
+
+Ports:
+======
+A programming running on a computer can listen for requests sent to a particular port number.
+
+E.g- 172.24.86.76:3000
+
+Response Headers:
+=================
+
+//////////////        Request (request + request headers)     //////////////
+//          //    ---------------------------------------->   //          //
+// Client   //                                                // Server   //
+//          //    <----------------------------------------   //          //
+//////////////        Response (response + response headers)  //////////////
+
+
+Response Headers
+-> Content-Type
+-> Status
+
+
+Buffers:
+========
+-> Temporary storage spot for a chunk of data that is being transferred from one place to another.
+-> The buffer is filled with data, then passed along
+-> Transfer small chunks of data at a time
+
+So...
+
+                                                   //////////
+                          __BUFFER____             //      //
+Data Passed on <---------| ||||||||   | <--|-----  // DATA //
+                         |____________|            //      //
+                                                   //////////
+
+Streams:
+========
+
+Data passed on and processed 
+<---- ||||| <---- ||||| <---- ||||| <---- |||    <---- | - | - | - | - | -
+                                          Buffer
+
+
+Streams in Node.js
+-> Can create streams in Node.js to transfer data
+-> Increase performance
+
+Streams:
+-> Writable streams - allow node js to write data to a stream
+-> Readable streams - allow node js to read data from a stream
+-> Duplex - can read and write to a stream
+
+Pipes:
+=======
+                                    READ STREAM
+    -- ||||| <---- |||    <---- | - | - | - | - | -
+    |              Buffer
+    |
+    V
+   ---
+   ---
+   ---  WRITE STREAM
+   ---
+   ---
+
+
+Express:
+=================
+-> Easy and flexible routing system
+-> Integrates with many templating engines
+-> Contains a middleware framework
+
+HTTP Methods:
+=============
+
+-> GET - When we type a URL in address bar
+-> POST - When pushed data to server
+-> DELETE - 
+-> PUT - 
+
+Responding to Requests:
+======================
+-> GET - app.get('route', fn)
+-> POST - app.post('route', fn)
+-> DELETE - app.delete('route', fn)
+
+NPM package debut:
+==================
+npm init
+
+npm install express -save
+npm uninstall express
+
+#Do globally installation:
+==========================
+npm install nodemon -g
+
+
+Query Strings:
+===============
+-> mysite.com/blog/news?page=2
+-> Page = 2
+-> mysite.com/contact?person=ryu&dept=marketing
+-> parse the request, and pull out the data
+
+
+POST requests:
+==============
+-> POST is a request method.
+-> POST requests, ask the server  to accept / store data which is enclosed in the body of the request
+-> Often used when submitting forms
+
+First install below library to work for POST request
+npm install body-parser
+
+
+
